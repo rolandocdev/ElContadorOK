@@ -7,36 +7,30 @@
 
   <meta name="description" content="Consultor en gestión y optimización de procesos y recursos. Diagnóstico inicial gratuito de 15 minutos. Mejora productividad, controla caja y reduce costos. Opero en CABA." />
   <meta name="author" content="Rolando M. Camarasa — El Consultor" />
-  <meta property="og:site_name" content="El Consultor" />
-  <meta property="og:title" content="El Consultor • Gestión y Eficiencia Empresarial" />
-  <meta property="og:description" content="Optimización de procesos, control financiero y diseño de indicadores. Diagnóstico inicial sin cargo. Opero en CABA." />
-  <meta property="og:type" content="website" />
-  <meta name="robots" content="index,follow" />
 
-  <link rel="canonical" href="https://elconsultor.com.ar/" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root{
-      --brand-blue: #0b2d6a;
-      --brand-accent: #ff5722;
-      --muted: #6b7280;
+      --brand-red: #E10600; /* acento */
+      --brand-black: #000000; /* dominante */
+      --brand-white: #ffffff;
+      --muted: #9ca3af;
     }
 
     html,body{
       font-family: 'Inter', system-ui;
-      background:#f7f9fb;
+      background:var(--brand-black);
+      color:var(--brand-white);
     }
 
-    /* HERO */
+    /* HERO ajustado a identidad: fondo negro, asterisco y línea roja */
     .hero-clip {
-      background: linear-gradient(180deg,var(--brand-blue),#083064 60%);
+      background: linear-gradient(180deg,var(--brand-black),#0a0a0a 60%);
       clip-path: polygon(0 0,100% 0,100% 82%,0 100%);
     }
     @media(max-width:768px){
@@ -45,30 +39,28 @@
 
     .focus-ring:focus{
       outline:none;
-      box-shadow:0 0 0 4px rgba(11,45,106,0.12);
+      box-shadow:0 0 0 4px rgba(225,16,0,0.12);
       border-radius:.5rem;
     }
 
-    /* --- TARJETAS ELEGANTES CORPORATIVAS --- */
-
+    /* TARJETAS: fondo negro profundo con borde ligero blanco */
     .service-card{
-      background:white;
-      border:1px solid #e8edf5;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.06);
       border-radius:1rem;
       padding:1.5rem;
       transition:all .25s ease;
       position:relative;
       overflow:hidden;
+      color:var(--brand-white);
     }
-
-    /* Elevación suave corporativa */
     .service-card:hover{
       transform:translateY(-6px);
-      box-shadow:0 16px 34px rgba(12,33,66,0.10);
-      border-color:#dce3ef;
+      box-shadow:0 16px 34px rgba(0,0,0,0.6);
+      border-color:rgba(225,16,0,0.18);
     }
 
-    /* Línea elegante que aparece arriba */
+    /* Línea roja superior (acento) */
     .service-card::before{
       content:"";
       position:absolute;
@@ -76,7 +68,7 @@
       left:0;
       width:0%;
       height:3px;
-      background:var(--brand-accent);
+      background:var(--brand-red);
       transition:width .3s ease;
       border-top-left-radius:1rem;
       border-top-right-radius:1rem;
@@ -85,7 +77,6 @@
       width:100%;
     }
 
-    /* Icon wrapper con animación elegante */
     .service-icon-wrap{
       width:52px;
       height:52px;
@@ -93,15 +84,14 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,87,34,0.12);
+      background:rgba(225,16,0,0.12);
       transition:background .25s ease, transform .25s ease;
     }
     .service-card:hover .service-icon-wrap{
-      background:rgba(255,87,34,0.18);
+      background:rgba(225,16,0,0.18);
       transform:translateY(-2px);
     }
 
-    /* Micro animación de icono */
     .service-card svg{
       transition:transform .25s ease;
     }
@@ -109,14 +99,12 @@
       transform:translateY(-2px);
     }
 
-    /* Elegante separación inferior */
     .service-footer{
-      border-top:1px solid #f1f3f7;
+      border-top:1px solid rgba(255,255,255,0.03);
       margin-top:1rem;
       padding-top:1rem;
     }
 
-    /* Fade-in corporativo */
     .card-appear{
       opacity:0;
       transform:translateY(14px);
@@ -127,7 +115,23 @@
       transform:translateY(0);
     }
 
-    /* OVERLAY MOBILE MENU */
+    /* NAV y botones con acento rojo */
+    a.accent, .btn-accent{
+      color:var(--brand-red);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn-red{
+      background:var(--brand-red);
+      color:var(--brand-white);
+    }
+    .btn-outline-white{
+      border:1px solid rgba(255,255,255,0.12);
+      color:var(--brand-white);
+      background:transparent;
+    }
+
+    /* Mobile menu overlay dark */
     #mobileMenu{
       backdrop-filter:blur(6px);
       transition:opacity .25s ease;
@@ -139,59 +143,85 @@
     #mobileMenu.open nav{
       transform:translateX(0);
     }
+
+    /* Small helpers */
+    .muted{ color:var(--muted); }
+    .small{ font-size:.9rem; }
+
+    /* Asterisk mark style for branding */
+    .brand-asterisk{
+      width:36px;
+      height:36px;
+      display:inline-block;
+      border-radius:6px;
+      background:var(--brand-white);
+      color:var(--brand-black);
+      font-weight:800;
+      line-height:36px;
+      text-align:center;
+      margin-right:.5rem;
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    /* Make links red when important */
+    a.link-important{ color:var(--brand-red); font-weight:600; text-decoration:none; }
+
+    /* Footer */
+    footer{ color:rgba(255,255,255,0.55); }
+
+    .pb-20 {
+    padding-bottom: 7rem;
+    }
   </style>
 </head>
-<body class="text-gray-800">
+<body>
 
   <!-- Header -->
   <header class="hero-clip text-white">
     <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <rect width="24" height="24" rx="6" fill="#fff" opacity="0.06"></rect>
-          <path d="M6 15h12M6 9h8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+        <div class="brand-asterisk" aria-hidden>*</div>
         <div>
           <div class="text-lg font-semibold">El Consultor</div>
-          <div class="text-xs text-gray-300">Gestión • Procesos • Productividad</div>
+          <div class="text-xs muted">Gestión & eficiencia empresarial</div>
         </div>
       </div>
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-4">
-        <a href="#propuesta" class="text-gray-200 hover:text-white transition">Propuesta</a>
-        <a href="#servicios" class="text-gray-200 hover:text-white transition">Servicios</a>
-        <a href="#casos" class="text-gray-200 hover:text-white transition">Casos</a>
-        <a href="#contacto" class="ml-4 px-4 py-2 rounded-md bg-white text-neutral-900 hover:opacity-95 font-semibold">Contactar</a>
+        <a href="#propuesta" class="muted hover:text-white transition">Propuesta</a>
+        <a href="#servicios" class="muted hover:text-white transition">Servicios</a>
+        <a href="#casos" class="muted hover:text-white transition">Casos</a>
+        <a href="#contacto" class="ml-4 px-4 py-2 rounded-md btn-outline-white hover:opacity-95 font-semibold">Contactame</a>
       </nav>
 
       <!-- Mobile button -->
       <button id="mobileToggle"
-              class="md:hidden p-2 rounded-md bg-white text-neutral-900 focus-ring">
-        <svg id="hamburgerIcon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path id="line1" d="M4 7h16" stroke="#0b2d6a" stroke-width="2" stroke-linecap="round"/>
-          <path id="line2" d="M4 12h16" stroke="#0b2d6a" stroke-width="2" stroke-linecap="round"/>
-          <path id="line3" d="M4 17h16" stroke="#0b2d6a" stroke-width="2" stroke-linecap="round"/>
+              class="md:hidden p-2 rounded-md btn-outline-white focus-ring" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M4 7h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 12h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobileMenu"
-         class="fixed inset-0 z-40 bg-black/40 hidden">
-      <nav class="absolute top-0 right-0 w-72 h-full bg-white shadow-xl p-6 flex flex-col gap-5">
+         class="fixed inset-0 z-40 bg-black/60 hidden">
+      <nav class="absolute top-0 right-0 w-72 h-full bg-[#080808] shadow-xl p-6 flex flex-col gap-5">
         <button id="closeMobileMenu" class="self-end p-2">
-          <svg width="22" height="22" viewBox="0 0 24 24" stroke="#0b2d6a" stroke-width="2">
+          <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2">
             <path d="M6 6l12 12M18 6l-12 12"/>
           </svg>
         </button>
 
-        <a href="#propuesta" class="text-neutral-900 text-lg">Propuesta</a>
-        <a href="#servicios" class="text-neutral-900 text-lg">Servicios</a>
-        <a href="#casos" class="text-neutral-900 text-lg">Casos</a>
+        <a href="#propuesta" class="text-white text-lg">Propuesta</a>
+        <a href="#servicios" class="text-white text-lg">Servicios</a>
+        <a href="#casos" class="text-white text-lg">Casos</a>
         <a href="#contacto"
-           class="mt-4 px-4 py-2 rounded-md bg-neutral-900 text-white text-center font-semibold">
-           Contactar
+           class="mt-4 px-4 py-2 rounded-md btn-red text-center">
+           Contactame
         </a>
       </nav>
     </div>
@@ -200,370 +230,353 @@
     <div class="max-w-6xl mx-auto px-6 pb-20 pt-8">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="uppercase tracking-widest text-sm text-gray-300 mb-4">
-            Consultoría en Gestión y Optimización de Procesos
+          <p class="uppercase tracking-widest text-sm muted mb-4">
+            Consultoría en gestión y optimización de procesos
           </p>
 
-          <h1 class="text-3xl md:text-4xl font-extrabold leading-tight text-white">
-            Detengo las <span class="text-orange-400">fugas de dinero</span>
+          <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
+            Detengo las <span class="link-important">fugas de dinero</span>
             en sus procesos operativos.
           </h1>
 
-          <p class="mt-4 text-gray-200 max-w-xl">
-            Soy consultor en gestión y optimización de procesos. Combino análisis de datos,
+          <p class="mt-4 muted max-w-xl">
+            Soy consultor en gestión y optimización de procesos*. Combino análisis de datos,
             auditorías operativas y diseño de indicadores para aumentar productividad
             y reducir costos.
           </p>
 
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <a href="#contacto"
-               class="inline-flex items-center gap-3 px-5 py-3 rounded-lg text-white font-semibold bg-orange-600 hover:opacity-95 focus-ring">
-              Reserva 15 min (sin cargo)
+               class="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-semibold btn-red">
+              Consulta express gratuita
             </a>
             <button id="viewPricing"
-                    class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/10">
+                    class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
               Ver servicios y precios
             </button>
           </div>
 
-          <p class="mt-3 text-sm text-gray-300">
-            Opero en Ciudad Autónoma de Buenos Aires (CABA).
+          <p class="mt-3 text-sm muted">
+            *Opero en Ciudad Autónoma de Buenos Aires (CABA).
           </p>
         </div>
 
-        <!-- Mini hero card -->
         <div class="hidden md:block">
-          <div class="bg-white rounded-xl p-6 shadow-lg text-neutral-900 card-appear">
-            <div class="text-sm text-gray-500">Diagnóstico Rápido</div>
-            <h3 class="text-xl font-bold mt-1">¿Dónde pierde su empresa?</h3>
-            <p class="mt-3 text-gray-600">
-              Mapa de fugas, propuesta ejecutable y plan de recuperación.
-            </p>
-            <ul class="mt-3 text-sm text-gray-600 space-y-1">
-              <li>• Auditoría operativa</li>
-              <li>• Tablero de KPIs</li>
-              <li>• Plan 30/60/90</li>
-            </ul>
-          </div>
-        </div>
+  <div class="bg-[#0b0b0b] rounded-xl p-6 shadow-lg card-appear">
+    <div class="text-sm muted">Detección profunda 🔍</div>
+    <h3 class="text-xl font-bold mt-1">Revelamos pérdidas que su equipo no ve</h3>
+    <p class="mt-3 muted">
+      Riesgos, costos ocultos y cuellos de botella revelados en un informe único.
+    </p>
+    <ul class="mt-3 text-sm muted space-y-1">
+      <li>• Auditoría relámpago</li>
+      <li>• Algoritmo de puntos críticos</li>
+      <li>• Plan de recuperación inmediata</li>
+    </ul>
+    <br>
+    <button id="viewPricing"
+                    class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
+              Consultar detalles
+            </button>
+  </div>
+  
+</div>
+
       </div>
     </div>
   </header>
 
-
   <!-- MAIN -->
-  <main id="main" class="max-w-6xl mx-auto px-6 -mt-10">
+  <main id="main" class="max-w-6xl mx-auto px-6 -mt-100">
 
     <!-- Propuesta -->
-    <section id="propuesta" class="bg-white rounded-xl p-6 md:p-10 shadow-sm">
+    <section id="propuesta" class="bg-[#070707] rounded-xl p-6 md:p-10 shadow-sm">
       <div class="grid md:grid-cols-3 gap-6">
         <article class="p-4 rounded-lg service-card">
           <div class="service-icon-wrap mb-4">
-            <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.6" fill="none">
-              <path d="M6 12h12"/>
-            </svg>
+            <i class="fa-solid fa-triangle-exclamation text-[26px]" style="color: var(--brand-red);"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">La Incertidumbre Cuesta</h3>
-          <p class="text-sm text-gray-600">
-            Procesos lentos y datos dispersos generan pérdidas diarias. Detectamos lo crítico.
+          <h3 class="text-lg font-semibold">La incertidumbre cuesta</h3>
+          <p class="text-sm muted">
+            Procesos lentos y datos dispersos generan pérdidas diarias. Detecto lo crítico.
           </p>
         </article>
 
         <article class="p-4 rounded-lg service-card">
           <div class="service-icon-wrap mb-4">
-            <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.6" fill="none">
-              <path d="M12 3v18"/>
-            </svg>
+            <i class="fa-solid fa-shield-halved text-[26px]" style="color: var(--brand-red);"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Control Real</h3>
-          <p class="text-sm text-gray-600">
+          <h3 class="text-lg font-semibold">Control Real</h3>
+          <p class="text-sm muted">
             Sistemas simples de control diario sin complejidad innecesaria.
           </p>
         </article>
 
         <article class="p-4 rounded-lg service-card">
           <div class="service-icon-wrap mb-4">
-            <svg width="26" height="26" viewBox="0 0 24 24" stroke="#10b981" stroke-width="1.6" fill="none">
-              <path d="M12 3v18"/>
-            </svg>
+            <i class="fa-solid fa-chart-line text-[26px]" style="color: var(--brand-red);"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">ROI Comprobable</h3>
-          <p class="text-sm text-gray-600">
+          <h3 class="text-lg font-semibold">ROI comprobable</h3>
+          <p class="text-sm muted">
             Ahorro cuantificable dentro del primer trimestre.
           </p>
         </article>
       </div>
     </section>
 
-
     <!-- Servicios estratégicos -->
     <section id="servicios" class="mt-10">
       <header class="mb-6">
         <h2 class="text-2xl md:text-3xl font-extrabold">Servicios estratégicos</h2>
-        <p class="text-gray-600 mt-2 max-w-2xl">
+        <p class="muted mt-2 max-w-2xl">
           Servicios diseñados para empresas que buscan orden, ahorro y decisiones basadas en datos.
         </p>
       </header>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Reuse existing service cards but with red accents -->
 
-        <!-- Servicio 1 -->
         <article class="service-card card-appear">
           <div class="flex items-start gap-4">
-            <div class="service-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.8" fill="none">
-                <path d="M12 3v18"/>
-              </svg>
-            </div>
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-diagram-project text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
             <div>
-              <h3 class="text-lg font-semibold">Análisis y Reingeniería Operativa</h3>
-              <p class="mt-2 text-sm text-gray-600">Reducción de errores y simplificación de flujos.</p>
+              <h3 class="text-lg font-semibold">Análisis y reingeniería operativa</h3>
+              <p class="mt-2 text-sm muted">Reducción de errores y simplificación de flujos.</p>
             </div>
           </div>
 
           <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm underline">Pedir diagnóstico</a>
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
             <button data-service="reingenieria"
-                    class="text-sm px-3 py-2 rounded-md border view-details">
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
               Ver detalles
             </button>
           </div>
         </article>
 
-        <!-- Servicio 2 -->
         <article class="service-card card-appear">
           <div class="flex items-start gap-4">
-            <div class="service-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.8" fill="none">
-                <path d="M3 12h18"/>
-              </svg>
-            </div>
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-file-invoice-dollar text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
             <div>
-              <h3 class="text-lg font-semibold">Auditoría y Control Financiero</h3>
-              <p class="mt-2 text-sm text-gray-600">Detección de fugas y previsibilidad real.</p>
+              <h3 class="text-lg font-semibold">Auditoría y control financiero</h3>
+              <p class="mt-2 text-sm muted">Detección de fugas y previsibilidad real.</p>
             </div>
           </div>
 
           <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm underline">Pedir diagnóstico</a>
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
             <button data-service="auditoria"
-                    class="text-sm px-3 py-2 rounded-md border view-details">
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
               Ver detalles
             </button>
           </div>
         </article>
 
-        <!-- Servicio 3 -->
         <article class="service-card card-appear">
           <div class="flex items-start gap-4">
-            <div class="service-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.8" fill="none">
-                <path d="M4 6h16M4 12h10M4 18h7"/>
-              </svg>
-            </div>
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-chart-pie text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
             <div>
-              <h3 class="text-lg font-semibold">Diseño de Indicadores y Reporting</h3>
-              <p class="mt-2 text-sm text-gray-600">KPIs claros sin planillas inmanejables.</p>
+              <h3 class="text-lg font-semibold">Diseño de indicadores y reporting</h3>
+              <p class="mt-2 text-sm muted">KPIs claros sin planillas inmanejables.</p>
             </div>
           </div>
 
           <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm underline">Pedir diagnóstico</a>
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
             <button data-service="indicadores"
-                    class="text-sm px-3 py-2 rounded-md border view-details">
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
               Ver detalles
             </button>
           </div>
         </article>
 
-        <!-- Servicio 4 -->
         <article class="service-card card-appear">
           <div class="flex items-start gap-4">
-            <div class="service-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.8" fill="none">
-                <path d="M12 3l5 7h-10z"/>
-              </svg>
-            </div>
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-gauge-high text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
             <div>
-              <h3 class="text-lg font-semibold">Consultoría en Eficiencia (ROI)</h3>
-              <p class="mt-2 text-sm text-gray-600">Plan de ahorro y retorno estimado.</p>
+              <h3 class="text-lg font-semibold">Consultoría en eficiencia (ROI)</h3>
+              <p class="mt-2 text-sm muted">Plan de ahorro y retorno estimado.</p>
             </div>
           </div>
 
           <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm underline">Pedir diagnóstico</a>
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
             <button data-service="eficiencia"
-                    class="text-sm px-3 py-2 rounded-md border view-details">
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
               Ver detalles
             </button>
           </div>
         </article>
 
-        <!-- Servicio 5 -->
         <article class="service-card card-appear">
           <div class="flex items-start gap-4">
-            <div class="service-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" stroke="#ff5722" stroke-width="1.8" fill="none">
-                <path d="M12 4v16"/>
-              </svg>
-            </div>
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-gears text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
             <div>
-              <h3 class="text-lg font-semibold">Mantenimiento y Automatización</h3>
-              <p class="mt-2 text-sm text-gray-600">Reportes y sistemas sin intervención diaria.</p>
+              <h3 class="text-lg font-semibold">Detección profunda</h3>
+              <p class="mt-2 text-sm muted">Riesgos ocultos y cuellos de botella revelados con precisión.</p>
             </div>
           </div>
 
           <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm underline">Pedir diagnóstico</a>
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
             <button data-service="mantenimiento"
-                    class="text-sm px-3 py-2 rounded-md border view-details">
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
               Ver detalles
             </button>
           </div>
         </article>
 
-        <!-- Consulta rápida -->
-        <article class="service-card card-appear border-dashed">
-          <h3 class="text-lg font-semibold">Consulta rápida sin cargo</h3>
-          <p class="mt-2 text-sm text-gray-600">
-            15 minutos para detectar puntos críticos.
-          </p>
-          <div class="service-footer">
-            <a href="#contacto"
-               class="inline-flex px-4 py-2 rounded-md bg-neutral-900 text-white">
-              Reservar 15 min
-            </a>
+        <article class="service-card card-appear">
+          <div class="flex items-start gap-4">
+            <div class="service-icon-wrap mb-4">
+            <i class="fa-solid fa-database text-[26px]" style="color: var(--brand-red);"></i>
+          </div>
+            <div>
+              <h3 class="text-lg font-semibold">Registro Inteligente Express</h3>
+              <p class="mt-2 text-sm muted">Optimización inmediata del registro y transformación de datos en información útil.</p>
+            </div>
+          </div>
+
+          <div class="service-footer flex items-center justify-between">
+            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
+            <button data-service="mantenimiento"
+                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
+              Ver detalles
+            </button>
           </div>
         </article>
       </div>
     </section>
-
 
     <!-- Casos -->
     <section id="casos" class="mt-10">
       <header class="mb-4">
         <h2 class="text-2xl font-extrabold">Resultados reales</h2>
-        <p class="text-gray-600 mt-1">Mejoras cuantificables en productividad y caja.</p>
+        <p class="muted mt-1">Mejoras cuantificables en productividad y caja.</p>
       </header>
 
       <div class="grid md:grid-cols-2 gap-6">
         <article class="service-card card-appear">
-          <div class="text-xs text-gray-500 uppercase">Industria Textil</div>
+          <div class="text-xs muted uppercase">Industria Textil</div>
           <h3 class="text-xl font-bold">Reducción del 18% en merma</h3>
-          <p class="mt-2 text-gray-600">Optimización de inventario y procesos de corte.</p>
+          <p class="mt-2 muted">Optimización de inventario y procesos de corte.</p>
           <div class="mt-4 flex justify-between font-semibold">
-            <span>Ahorro</span><span class="text-green-600">+18%</span>
+            <span>Ahorro</span><span class="text-green-500">+18%</span>
           </div>
         </article>
 
         <article class="service-card card-appear">
-          <div class="text-xs text-gray-500 uppercase">Servicios</div>
+          <div class="text-xs muted uppercase">Servicios</div>
           <h3 class="text-xl font-bold">Previsibilidad del flujo de caja: 95%</h3>
-          <p class="mt-2 text-gray-600">
+          <p class="mt-2 muted">
             Unificación contable y alertas automáticas.
           </p>
           <div class="mt-4 flex justify-between font-semibold">
-            <span>Riesgo</span><span class="text-green-600">Mejora 4×</span>
+            <span>Riesgo</span><span class="text-green-500">Mejora 4×</span>
+          </div>
+        </article>
+
+        <article class="service-card card-appear">
+          <div class="text-xs muted uppercase">Restaurantes</div>
+          <h3 class="text-xl font-bold">Reducción del 24% en desperdicio diario</h3>
+          <p class="mt-2 muted">Control de mermas con registro de insumos, fórmulas de rendimientos y alarmas por desvíos.</p>
+          <div class="mt-4 flex justify-between font-semibold">
+            <span>Costos</span><span class="text-green-500">+18%</span>
+          </div>
+        </article>
+
+        <article class="service-card card-appear">
+          <div class="text-xs muted uppercase">Consultorios</div>
+          <h3 class="text-xl font-bold">Reducción del 25% en ausentismo de pacientes</h3>
+          <p class="mt-2 muted">
+            Excel con recordatorios automáticos (mail/WhatsApp), probabilidades de no-show y agenda anticipada.
+          </p>
+          <div class="mt-4 flex justify-between font-semibold">
+            <span>Operatividad</span><span class="text-green-500">Mejora 4×</span>
+          </div>
+        </article>
+
+        <article class="service-card card-appear">
+          <div class="text-xs muted uppercase">Gastronomía</div>
+          <h3 class="text-xl font-bold">Ajuste del 27% en costo por porción</h3>
+          <p class="mt-2 muted">Planilla de recetas con costos unitarios, factor de corrección y margen por plato.</p>
+          <div class="mt-4 flex justify-between font-semibold">
+            <span>Rentabilidad</span><span class="text-green-500">+18%</span>
+          </div>
+        </article>
+
+        <article class="service-card card-appear">
+          <div class="text-xs muted uppercase">Farmacias</div>
+          <h3 class="text-xl font-bold">Reducción del 26% en vencimientos</h3>
+          <p class="mt-2 muted">
+            Registro de lotes, fechas, rotación y alerta automática por proximidad a vencimiento.
+          </p>
+          <div class="mt-4 flex justify-between font-semibold">
+            <span>Inventario</span><span class="text-green-500">Mejora 4×</span>
           </div>
         </article>
       </div>
     </section>
 
-
     <!-- Contacto -->
-    <section id="contacto" class="mt-10 bg-white p-8 rounded-xl shadow-sm">
+    <section id="contacto" class="mt-10 bg-[#070707] p-8 rounded-xl shadow-sm">
       <div class="grid md:grid-cols-2 gap-6 items-center">
         <div>
-          <h2 class="text-2xl font-extrabold">¿Quiere dejar de perder dinero?</h2>
-          <p class="mt-3 text-gray-600">
+          <h2 class="text-2xl font-extrabold">¿Necesita ayuda ahora mismo? Pruebe la consulta gratuita</h2>
+          <p class="mt-3 muted">
             Reserve un diagnóstico inicial sin cargo.
           </p>
 
-          <dl class="mt-4 text-sm text-gray-700 space-y-2">
-            <div>
-              <dt class="font-semibold">Modalidad</dt>
-              <dd>Videollamada (Google Meet / Zoom)</dd>
-            </div>
-            <div>
-              <dt class="font-semibold">Zona</dt>
-              <dd>CABA</dd>
-            </div>
-            <div>
-              <dt class="font-semibold">Duración</dt>
-              <dd>15 minutos</dd>
-            </div>
-          </dl>
-
           <div class="mt-6">
             <a href="mailto:contacto@elconsultor.com.ar"
-               class="px-6 py-3 rounded-lg bg-neutral-900 text-white font-semibold">
+               class="px-6 py-3 rounded-lg btn-red font-semibold">
               Reservar diagnóstico
             </a>
           </div>
         </div>
 
-        <form id="contactForm" class="bg-gray-50 p-4 rounded-lg" onsubmit="handleSubmit(event)">
-          <div class="grid gap-3">
-            <label class="text-sm">
-              <span class="font-semibold">Nombre</span>
-              <input required name="name" class="mt-1 p-3 rounded-md border border-gray-200 focus-ring" />
-            </label>
-
-            <label class="text-sm">
-              <span class="font-semibold">Correo</span>
-              <input required type="email" name="email" class="mt-1 p-3 rounded-md border border-gray-200 focus-ring" />
-            </label>
-
-            <label class="text-sm">
-              <span class="font-semibold">Comentario</span>
-              <textarea name="message" rows="3" class="mt-1 p-3 rounded-md border border-gray-200 focus-ring"></textarea>
-            </label>
-
-            <button type="submit" class="px-5 py-3 rounded-md bg-orange-600 text-white font-semibold">
-              Enviar
-            </button>
-
-            <p class="text-xs text-gray-500">Respondemos en 48 hs hábiles.</p>
-          </div>
-        </form>
+        
       </div>
     </section>
 
   </main>
 
-
   <!-- Footer -->
-  <footer class="mt-12 py-8 text-center text-sm text-gray-500">
+  <footer class="mt-12 py-8 text-center text-sm muted">
     <div>&copy; <span id="year"></span> Rolando M. Camarasa — El Consultor.</div>
   </footer>
 
-
   <!-- Pricing Modal -->
-  <div id="pricingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 p-4">
-    <div class="bg-white rounded-xl max-w-3xl w-full p-6">
+  <div id="pricingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
+    <div class="bg-[#0b0b0b] rounded-xl max-w-3xl w-full p-6 border border-white/6">
       <div class="flex items-start justify-between">
         <h3 class="text-xl font-bold">Servicios y precios</h3>
-        <button id="closePricing" class="text-gray-500">✕</button>
+        <button id="closePricing" class="text-white/70">✕</button>
       </div>
 
-      <p class="mt-4 text-gray-600 text-sm">
+      <p class="mt-4 muted text-sm">
         Valores estimados en ARS. Consultar por propuesta adaptada.
       </p>
 
       <div class="mt-6 text-right">
-        <a href="#contacto" class="px-5 py-2 rounded-md bg-neutral-900 text-white">Reservar diagnóstico</a>
+        <a href="#contacto" class="px-5 py-2 rounded-md btn-red">Reservar diagnóstico</a>
       </div>
     </div>
   </div>
 
-
-  <!-- Scripts -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* ------------------------------
-       MOBILE MENU
-    ------------------------------ */
     const mobileToggle = document.getElementById("mobileToggle");
     const mobileMenu   = document.getElementById("mobileMenu");
     const closeMenuBtn = document.getElementById("closeMobileMenu");
@@ -572,11 +585,13 @@
       mobileMenu.classList.remove("hidden");
       setTimeout(()=> mobileMenu.classList.add("open"), 10);
       document.body.style.overflow = "hidden";
+      mobileToggle.setAttribute('aria-expanded','true');
     }
     function closeMenu(){
       mobileMenu.classList.remove("open");
       setTimeout(()=> mobileMenu.classList.add("hidden"), 200);
       document.body.style.overflow = "";
+      mobileToggle.setAttribute('aria-expanded','false');
     }
 
     mobileToggle.addEventListener("click", openMenu);
@@ -585,9 +600,6 @@
 
     document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeMenu(); });
 
-    /* ------------------------------
-       FADE-IN CARDS
-    ------------------------------ */
     const observer = new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
@@ -601,17 +613,11 @@
       observer.observe(c);
     });
 
-    /* ------------------------------
-       PRICING MODAL
-    ------------------------------ */
     const pricingModal = document.getElementById("pricingModal");
     document.getElementById("viewPricing").onclick = ()=> pricingModal.classList.remove("hidden");
     document.getElementById("closePricing").onclick = ()=> pricingModal.classList.add("hidden");
     pricingModal.onclick = (e)=>{ if(e.target===pricingModal) pricingModal.classList.add("hidden") };
 
-    /* ------------------------------
-       CONTACT FORM EMAIL FALLBACK
-    ------------------------------ */
     function handleSubmit(e){
       e.preventDefault();
       const data = new FormData(e.target);
