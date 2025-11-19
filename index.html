@@ -3,47 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>El Consultor • Gestión y Eficiencia Empresarial | Consultoría en Procesos</title>
 
-  <meta name="description" content="Consultor en gestión y optimización de procesos y recursos. Diagnóstico inicial gratuito de 15 minutos. Mejora productividad, controla caja y reduce costos. Opero en CABA." />
-  <meta name="author" content="Rolando M. Camarasa — El Consultor" />
+  <title>El Consultor • Optimización Operativa y Control Empresarial</title>
+
+  <meta name="description" content="Consultor especializado en optimización operativa, reducción de costos, control de procesos y eficiencia empresarial. Consulta express gratuita para detectar fugas, cuellos de botella y oportunidades de mejora. Opero en CABA." />
+  <meta name="keywords" content="consultoría, procesos, optimización, eficiencia, control, costos, auditoría, KPIs, gestión operativa, reingeniería, productividad, negocios, empresa" />
+  <meta name="author" content="El Consultor" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root{
-      --brand-red: #E10600; /* acento */
-      --brand-black: #000000; /* dominante */
+      --brand-red: #E10600;
+      --brand-black: #000000;
       --brand-white: #ffffff;
       --muted: #9ca3af;
     }
-
     html,body{
-      font-family: 'Inter', system-ui;
+      font-family:'Inter',system-ui;
       background:var(--brand-black);
       color:var(--brand-white);
     }
-
-    /* HERO ajustado a identidad: fondo negro, asterisco y línea roja */
-    .hero-clip {
-      background: linear-gradient(180deg,var(--brand-black),#0a0a0a 60%);
-      clip-path: polygon(0 0,100% 0,100% 82%,0 100%);
+    .hero-clip{
+      background:linear-gradient(180deg,var(--brand-black),#0a0a0a 60%);
+      clip-path:polygon(0 0,100% 0,100% 82%,0 100%);
     }
     @media(max-width:768px){
-      .hero-clip{ clip-path:none; border-bottom-left-radius:1rem; border-bottom-right-radius:1rem }
+      .hero-clip{ clip-path:none;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem }
     }
-
     .focus-ring:focus{
-      outline:none;
-      box-shadow:0 0 0 4px rgba(225,16,0,0.12);
-      border-radius:.5rem;
+      outline:none;box-shadow:0 0 0 4px rgba(225,16,0,0.12);border-radius:.5rem;
     }
-
-    /* TARJETAS: fondo negro profundo con borde ligero blanco */
     .service-card{
       background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border:1px solid rgba(255,255,255,0.06);
@@ -59,575 +52,448 @@
       box-shadow:0 16px 34px rgba(0,0,0,0.6);
       border-color:rgba(225,16,0,0.18);
     }
-
-    /* Línea roja superior (acento) */
     .service-card::before{
       content:"";
       position:absolute;
-      top:0;
-      left:0;
-      width:0%;
-      height:3px;
+      top:0;left:0;width:0%;height:3px;
       background:var(--brand-red);
       transition:width .3s ease;
-      border-top-left-radius:1rem;
-      border-top-right-radius:1rem;
+      border-top-left-radius:1rem;border-top-right-radius:1rem;
     }
-    .service-card:hover::before{
-      width:100%;
-    }
-
+    .service-card:hover::before{ width:100%; }
     .service-icon-wrap{
-      width:52px;
-      height:52px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      width:52px;height:52px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
       background:rgba(225,16,0,0.12);
-      transition:background .25s ease, transform .25s ease;
+      transition:background .25s ease,transform .25s ease;
     }
     .service-card:hover .service-icon-wrap{
-      background:rgba(225,16,0,0.18);
-      transform:translateY(-2px);
+      background:rgba(225,16,0,0.18);transform:translateY(-2px);
     }
-
-    .service-card svg{
-      transition:transform .25s ease;
-    }
-    .service-card:hover svg{
-      transform:translateY(-2px);
-    }
-
+    .service-card svg{ transition:transform .25s ease; }
+    .service-card:hover svg{ transform:translateY(-2px); }
     .service-footer{
       border-top:1px solid rgba(255,255,255,0.03);
-      margin-top:1rem;
-      padding-top:1rem;
+      margin-top:1rem;padding-top:1rem;
     }
-
     .card-appear{
-      opacity:0;
-      transform:translateY(14px);
-      transition:all .6s ease;
+      opacity:0;transform:translateY(14px);transition:all .6s ease;
     }
     .card-visible{
-      opacity:1;
-      transform:translateY(0);
+      opacity:1;transform:translateY(0);
     }
-
-    /* NAV y botones con acento rojo */
-    a.accent, .btn-accent{
-      color:var(--brand-red);
-      text-decoration:none;
-      font-weight:600;
-    }
-    .btn-red{
-      background:var(--brand-red);
-      color:var(--brand-white);
-    }
+    a.accent,.btn-accent{ color:var(--brand-red);font-weight:600;text-decoration:none; }
+    .btn-red{ background:var(--brand-red);color:var(--brand-white); }
     .btn-outline-white{
       border:1px solid rgba(255,255,255,0.12);
-      color:var(--brand-white);
-      background:transparent;
+      color:var(--brand-white);background:transparent;
     }
-
-    /* Mobile menu overlay dark */
     #mobileMenu{
-      backdrop-filter:blur(6px);
-      transition:opacity .25s ease;
+      backdrop-filter:blur(6px);transition:opacity .25s ease;
     }
     #mobileMenu nav{
-      transform:translateX(100%);
-      transition:transform .25s ease;
+      transform:translateX(100%);transition:transform .25s ease;
     }
-    #mobileMenu.open nav{
-      transform:translateX(0);
-    }
-
-    /* Small helpers */
+    #mobileMenu.open nav{ transform:translateX(0); }
     .muted{ color:var(--muted); }
-    .small{ font-size:.9rem; }
-
-    /* Asterisk mark style for branding */
     .brand-asterisk{
-      width:36px;
-      height:36px;
-      display:inline-block;
-      border-radius:6px;
-      background:var(--brand-white);
-      color:var(--brand-black);
-      font-weight:800;
-      line-height:36px;
-      text-align:center;
-      margin-right:.5rem;
-      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+      width:36px;height:36px;border-radius:6px;
+      background:var(--brand-white);color:var(--brand-black);
+      font-weight:800;line-height:36px;text-align:center;
+      margin-right:.5rem;box-shadow:0 6px 18px rgba(0,0,0,0.45);
     }
-
-    /* Make links red when important */
-    a.link-important{ color:var(--brand-red); font-weight:600; text-decoration:none; }
-
-    /* Footer */
+    a.link-important{ color:var(--brand-red);font-weight:600;text-decoration:none; }
     footer{ color:rgba(255,255,255,0.55); }
-
-    .pb-20 {
-    padding-bottom: 7rem;
-    }
+    .pb-20{ padding-bottom:7rem; }
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="hero-clip text-white">
-    <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="brand-asterisk" aria-hidden>*</div>
-        <div>
-          <div class="text-lg font-semibold">El Consultor</div>
-          <div class="text-xs muted">Gestión & eficiencia empresarial</div>
-        </div>
+<header class="hero-clip text-white">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="brand-asterisk">*</div>
+      <div>
+        <div class="text-lg font-semibold">El Consultor</div>
+        <div class="text-xs muted">Gestión & eficiencia empresarial</div>
       </div>
+    </div>
 
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-4">
-        <a href="#propuesta" class="muted hover:text-white transition">Propuesta</a>
-        <a href="#servicios" class="muted hover:text-white transition">Servicios</a>
-        <a href="#casos" class="muted hover:text-white transition">Casos</a>
-        <a href="#contacto" class="ml-4 px-4 py-2 rounded-md btn-outline-white hover:opacity-95 font-semibold">Contactame</a>
-      </nav>
+    <nav class="hidden md:flex items-center gap-4">
+      <a href="#propuesta" class="muted hover:text-white transition">Propuesta</a>
+      <a href="#servicios" class="muted hover:text-white transition">Servicios</a>
+      <a href="#casos" class="muted hover:text-white transition">Casos</a>
+      <a href="#contacto" class="ml-4 px-4 py-2 rounded-md btn-outline-white font-semibold hover:opacity-95">Contactar</a>
+    </nav>
 
-      <!-- Mobile button -->
-      <button id="mobileToggle"
-              class="md:hidden p-2 rounded-md btn-outline-white focus-ring" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M4 7h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M4 12h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <button id="mobileToggle" class="md:hidden p-2 rounded-md btn-outline-white focus-ring">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M4 7h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 12h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 17h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-black/60 hidden">
+    <nav class="absolute top-0 right-0 w-72 h-full bg-[#080808] shadow-xl p-6 flex flex-col gap-5">
+      <button id="closeMobileMenu" class="self-end p-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+          <path d="M6 6l12 12M18 6l-12 12"/>
         </svg>
       </button>
-    </div>
+      <a href="#propuesta" class="text-white text-lg">Propuesta</a>
+      <a href="#servicios" class="text-white text-lg">Servicios</a>
+      <a href="#casos" class="text-white text-lg">Casos</a>
+      <a href="#contacto" class="mt-4 px-4 py-2 rounded-md btn-red text-center">Consulta express gratuita</a>
+    </nav>
+  </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-         class="fixed inset-0 z-40 bg-black/60 hidden">
-      <nav class="absolute top-0 right-0 w-72 h-full bg-[#080808] shadow-xl p-6 flex flex-col gap-5">
-        <button id="closeMobileMenu" class="self-end p-2">
-          <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2">
-            <path d="M6 6l12 12M18 6l-12 12"/>
-          </svg>
-        </button>
+  <!-- Hero -->
+  <div class="max-w-6xl mx-auto px-6 pb-20 pt-8">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="uppercase tracking-widest text-sm muted mb-4">Optimización de procesos y control operativo</p>
 
-        <a href="#propuesta" class="text-white text-lg">Propuesta</a>
-        <a href="#servicios" class="text-white text-lg">Servicios</a>
-        <a href="#casos" class="text-white text-lg">Casos</a>
-        <a href="#contacto"
-           class="mt-4 px-4 py-2 rounded-md btn-red text-center">
-           Contactame
-        </a>
-      </nav>
-    </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
+          Identifico y detengo las <span class="link-important">fugas de dinero</span> en su operación diaria.
+        </h1>
 
-    <!-- Hero -->
-    <div class="max-w-6xl mx-auto px-6 pb-20 pt-8">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="uppercase tracking-widest text-sm muted mb-4">
-            Consultoría en gestión y optimización de procesos
-          </p>
+        <p class="mt-4 muted max-w-xl">
+          Trabajo con empresas que necesitan orden, claridad financiera y procesos que funcionen sin fricción. Detecto cuellos de botella, estandarizo tareas críticas y diseño controles simples que reducen pérdidas.
+        </p>
 
-          <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
-            Detengo las <span class="link-important">fugas de dinero</span>
-            en sus procesos operativos.
-          </h1>
-
-          <p class="mt-4 muted max-w-xl">
-            Soy consultor en gestión y optimización de procesos*. Combino análisis de datos,
-            auditorías operativas y diseño de indicadores para aumentar productividad
-            y reducir costos.
-          </p>
-
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#contacto"
-               class="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-semibold btn-red">
-              Consulta express gratuita
-            </a>
-            <button id="viewPricing"
-                    class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
-              Ver servicios y precios
-            </button>
-          </div>
-
-          <p class="mt-3 text-sm muted">
-            *Opero en Ciudad Autónoma de Buenos Aires (CABA).
-          </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#contacto" class="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-semibold btn-red">
+            Consulta express gratuita
+          </a>
+          <button id="viewPricing" class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
+            Ver servicios y precios
+          </button>
         </div>
 
-        <div class="hidden md:block">
-  <div class="bg-[#0b0b0b] rounded-xl p-6 shadow-lg card-appear">
-    <div class="text-sm muted">Detección profunda 🔍</div>
-    <h3 class="text-xl font-bold mt-1">Revelamos pérdidas que su equipo no ve</h3>
-    <p class="mt-3 muted">
-      Riesgos, costos ocultos y cuellos de botella revelados en un informe único.
-    </p>
-    <ul class="mt-3 text-sm muted space-y-1">
-      <li>• Auditoría relámpago</li>
-      <li>• Algoritmo de puntos críticos</li>
-      <li>• Plan de recuperación inmediata</li>
-    </ul>
-    <br>
-    <button id="viewPricing"
-                    class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
-              Consultar detalles
-            </button>
-  </div>
-  
-</div>
+        <p class="mt-3 text-sm muted">Atención en Ciudad Autónoma de Buenos Aires.</p>
+      </div>
 
+      <div class="hidden md:block">
+        <div class="bg-[#0b0b0b] rounded-xl p-6 shadow-lg card-appear">
+          <div class="text-sm muted">Diagnóstico preciso</div>
+          <h3 class="text-xl font-bold mt-1">Detecto problemas que su equipo no ve</h3>
+          <p class="mt-3 muted">Análisis de procesos, puntos críticos y riesgos operativos detectados en minutos.</p>
+          <ul class="mt-3 text-sm muted space-y-1">
+            <li>• Auditoría relámpago</li>
+            <li>• Identificación de desvíos</li>
+            <li>• Prioridades inmediatas de mejora</li>
+          </ul>
+          <br>
+          <button class="px-5 py-3 border border-white rounded-lg text-white hover:bg-white/5">
+            Consultar detalles
+          </button>
+        </div>
       </div>
     </div>
+  </div>
+</header>
+
+<main id="main" class="max-w-6xl mx-auto px-6 -mt-100">
+
+<section id="propuesta" class="bg-[#070707] rounded-xl p-6 md:p-10 shadow-sm">
+  <div class="grid md:grid-cols-3 gap-6">
+    <article class="p-4 rounded-lg service-card">
+      <div class="service-icon-wrap mb-4">
+        <i class="fa-solid fa-triangle-exclamation text-[26px]" style="color: var(--brand-red);"></i>
+      </div>
+      <h3 class="text-lg font-semibold">Las pérdidas no avisan</h3>
+      <p class="text-sm muted">
+        Procesos lentos, inventarios descontrolados y datos dispersos generan fugas diarias. Identifico su origen y su costo real.
+      </p>
+    </article>
+
+    <article class="p-4 rounded-lg service-card">
+      <div class="service-icon-wrap mb-4">
+        <i class="fa-solid fa-shield-halved text-[26px]" style="color: var(--brand-red);"></i>
+      </div>
+      <h3 class="text-lg font-semibold">Control sin complejidad</h3>
+      <p class="text-sm muted">
+        Implemento sistemas simples, medibles y sostenibles que ordenan la operación sin agregar carga.
+      </p>
+    </article>
+
+    <article class="p-4 rounded-lg service-card">
+      <div class="service-icon-wrap mb-4">
+        <i class="fa-solid fa-chart-line text-[26px]" style="color: var(--brand-red);"></i>
+      </div>
+      <h3 class="text-lg font-semibold">Resultados cuantificables</h3>
+      <p class="text-sm muted">
+        Reducción de costos y mejoras de productividad visibles dentro del primer trimestre.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="servicios" class="mt-10">
+  <header class="mb-6">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Servicios estratégicos</h2>
+    <p class="muted mt-2 max-w-2xl">Soluciones diseñadas para empresas que buscan orden, previsibilidad y mejoras sostenidas.</p>
   </header>
 
-  <!-- MAIN -->
-  <main id="main" class="max-w-6xl mx-auto px-6 -mt-100">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <!-- Propuesta -->
-    <section id="propuesta" class="bg-[#070707] rounded-xl p-6 md:p-10 shadow-sm">
-      <div class="grid md:grid-cols-3 gap-6">
-        <article class="p-4 rounded-lg service-card">
-          <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-triangle-exclamation text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-          <h3 class="text-lg font-semibold">La incertidumbre cuesta</h3>
-          <p class="text-sm muted">
-            Procesos lentos y datos dispersos generan pérdidas diarias. Detecto lo crítico.
-          </p>
-        </article>
-
-        <article class="p-4 rounded-lg service-card">
-          <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-shield-halved text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-          <h3 class="text-lg font-semibold">Control Real</h3>
-          <p class="text-sm muted">
-            Sistemas simples de control diario sin complejidad innecesaria.
-          </p>
-        </article>
-
-        <article class="p-4 rounded-lg service-card">
-          <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-chart-line text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-          <h3 class="text-lg font-semibold">ROI comprobable</h3>
-          <p class="text-sm muted">
-            Ahorro cuantificable dentro del primer trimestre.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Servicios estratégicos -->
-    <section id="servicios" class="mt-10">
-      <header class="mb-6">
-        <h2 class="text-2xl md:text-3xl font-extrabold">Servicios estratégicos</h2>
-        <p class="muted mt-2 max-w-2xl">
-          Servicios diseñados para empresas que buscan orden, ahorro y decisiones basadas en datos.
-        </p>
-      </header>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Reuse existing service cards but with red accents -->
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-diagram-project text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Análisis y reingeniería operativa</h3>
-              <p class="mt-2 text-sm muted">Reducción de errores y simplificación de flujos.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="reingenieria"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-file-invoice-dollar text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Auditoría y control financiero</h3>
-              <p class="mt-2 text-sm muted">Detección de fugas y previsibilidad real.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="auditoria"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-chart-pie text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Diseño de indicadores y reporting</h3>
-              <p class="mt-2 text-sm muted">KPIs claros sin planillas inmanejables.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="indicadores"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-gauge-high text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Consultoría en eficiencia (ROI)</h3>
-              <p class="mt-2 text-sm muted">Plan de ahorro y retorno estimado.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="eficiencia"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-gears text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Detección profunda</h3>
-              <p class="mt-2 text-sm muted">Riesgos ocultos y cuellos de botella revelados con precisión.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="mantenimiento"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="flex items-start gap-4">
-            <div class="service-icon-wrap mb-4">
-            <i class="fa-solid fa-database text-[26px]" style="color: var(--brand-red);"></i>
-          </div>
-            <div>
-              <h3 class="text-lg font-semibold">Registro Inteligente Express</h3>
-              <p class="mt-2 text-sm muted">Optimización inmediata del registro y transformación de datos en información útil.</p>
-            </div>
-          </div>
-
-          <div class="service-footer flex items-center justify-between">
-            <a href="#contacto" class="text-sm link-important">Pedir diagnóstico</a>
-            <button data-service="mantenimiento"
-                    class="text-sm px-3 py-2 rounded-md border view-details btn-outline-white">
-              Ver detalles
-            </button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Casos -->
-    <section id="casos" class="mt-10">
-      <header class="mb-4">
-        <h2 class="text-2xl font-extrabold">Resultados reales</h2>
-        <p class="muted mt-1">Mejoras cuantificables en productividad y caja.</p>
-      </header>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Industria Textil</div>
-          <h3 class="text-xl font-bold">Reducción del 18% en merma</h3>
-          <p class="mt-2 muted">Optimización de inventario y procesos de corte.</p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Ahorro</span><span class="text-green-500">+18%</span>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Servicios</div>
-          <h3 class="text-xl font-bold">Previsibilidad del flujo de caja: 95%</h3>
-          <p class="mt-2 muted">
-            Unificación contable y alertas automáticas.
-          </p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Riesgo</span><span class="text-green-500">Mejora 4×</span>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Restaurantes</div>
-          <h3 class="text-xl font-bold">Reducción del 24% en desperdicio diario</h3>
-          <p class="mt-2 muted">Control de mermas con registro de insumos, fórmulas de rendimientos y alarmas por desvíos.</p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Costos</span><span class="text-green-500">+18%</span>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Consultorios</div>
-          <h3 class="text-xl font-bold">Reducción del 25% en ausentismo de pacientes</h3>
-          <p class="mt-2 muted">
-            Excel con recordatorios automáticos (mail/WhatsApp), probabilidades de no-show y agenda anticipada.
-          </p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Operatividad</span><span class="text-green-500">Mejora 4×</span>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Gastronomía</div>
-          <h3 class="text-xl font-bold">Ajuste del 27% en costo por porción</h3>
-          <p class="mt-2 muted">Planilla de recetas con costos unitarios, factor de corrección y margen por plato.</p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Rentabilidad</span><span class="text-green-500">+18%</span>
-          </div>
-        </article>
-
-        <article class="service-card card-appear">
-          <div class="text-xs muted uppercase">Farmacias</div>
-          <h3 class="text-xl font-bold">Reducción del 26% en vencimientos</h3>
-          <p class="mt-2 muted">
-            Registro de lotes, fechas, rotación y alerta automática por proximidad a vencimiento.
-          </p>
-          <div class="mt-4 flex justify-between font-semibold">
-            <span>Inventario</span><span class="text-green-500">Mejora 4×</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="mt-10 bg-[#070707] p-8 rounded-xl shadow-sm">
-      <div class="grid md:grid-cols-2 gap-6 items-center">
-        <div>
-          <h2 class="text-2xl font-extrabold">¿Necesita ayuda ahora mismo? Pruebe la consulta gratuita</h2>
-          <p class="mt-3 muted">
-            Reserve un diagnóstico inicial sin cargo.
-          </p>
-
-          <div class="mt-6">
-            <a href="mailto:contacto@elconsultor.com.ar"
-               class="px-6 py-3 rounded-lg btn-red font-semibold">
-              Reservar diagnóstico
-            </a>
-          </div>
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-diagram-project text-[26px]" style="color: var(--brand-red);"></i>
         </div>
-
-        
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="mt-12 py-8 text-center text-sm muted">
-    <div>&copy; <span id="year"></span> Rolando M. Camarasa — El Consultor.</div>
-  </footer>
-
-  <!-- Pricing Modal -->
-  <div id="pricingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
-    <div class="bg-[#0b0b0b] rounded-xl max-w-3xl w-full p-6 border border-white/6">
-      <div class="flex items-start justify-between">
-        <h3 class="text-xl font-bold">Servicios y precios</h3>
-        <button id="closePricing" class="text-white/70">✕</button>
+        <div>
+          <h3 class="text-lg font-semibold">Reingeniería operativa</h3>
+          <p class="mt-2 text-sm muted">Estandarización, simplificación y eliminación de errores repetitivos.</p>
+        </div>
       </div>
 
-      <p class="mt-4 muted text-sm">
-        Valores estimados en ARS. Consultar por propuesta adaptada.
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-file-invoice-dollar text-[26px]" style="color: var(--brand-red);"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Auditoría financiera operativa</h3>
+          <p class="mt-2 text-sm muted">Detección de fugas, desvíos y riesgo de caja.</p>
+        </div>
+      </div>
+
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-chart-pie text-[26px]" style="color: var(--brand-red);"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">KPIs y reporting</h3>
+          <p class="mt-2 text-sm muted">Indicadores claros, accionables y actualizables sin fricción.</p>
+        </div>
+      </div>
+
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-gauge-high text-[26px]" style="color: var(--brand-red);"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Consultoría en eficiencia</h3>
+          <p class="mt-2 text-sm muted">Planes de ahorro, retorno estimado y mejoras verificables.</p>
+        </div>
+      </div>
+
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-gears text-[26px]" style="color: var(--brand-red);"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Detección profunda</h3>
+          <p class="mt-2 text-sm muted">Riesgos ocultos y cuellos de botella revelados con precisión.</p>
+        </div>
+      </div>
+
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="flex items-start gap-4">
+        <div class="service-icon-wrap mb-4">
+          <i class="fa-solid fa-database text-[26px]" style="color: var(--brand-red);"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Registro Inteligente Express</h3>
+          <p class="mt-2 text-sm muted">Transformación inmediata de datos dispersos en información útil.</p>
+        </div>
+      </div>
+
+      <div class="service-footer flex items-center justify-between">
+        <a href="#contacto" class="text-sm link-important">Consulta express gratuita</a>
+        <button class="text-sm px-3 py-2 rounded-md border btn-outline-white">Ver detalles</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="casos" class="mt-10">
+  <header class="mb-4">
+    <h2 class="text-2xl font-extrabold">Resultados reales</h2>
+    <p class="muted mt-1">Mejoras verificadas en rendimiento, control y costos.</p>
+  </header>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Industria Textil</div>
+      <h3 class="text-xl font-bold">Reducción del 18% en merma</h3>
+      <p class="mt-2 muted">Inventarios controlados y mejoras en el flujo de corte.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Ahorro</span><span class="text-green-500">+18%</span>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Servicios</div>
+      <h3 class="text-xl font-bold">Previsibilidad del flujo de caja: 95%</h3>
+      <p class="mt-2 muted">Alertas operativas y unificación de registros.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Riesgo</span><span class="text-green-500">Mejora 4×</span>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Gastronomía</div>
+      <h3 class="text-xl font-bold">Reducción del 24% en desperdicio diario</h3>
+      <p class="mt-2 muted">Controles de insumos y alertas por desvíos.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Costos</span><span class="text-green-500">+18%</span>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Consultorios</div>
+      <h3 class="text-xl font-bold">Reducción del 25% en ausentismo</h3>
+      <p class="mt-2 muted">Agenda inteligente con recordatorios automáticos.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Operatividad</span><span class="text-green-500">Mejora 4×</span>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Gastronomía</div>
+      <h3 class="text-xl font-bold">Ajuste del 27% en costo por porción</h3>
+      <p class="mt-2 muted">Recetas con costos unitarios y factores de corrección.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Rentabilidad</span><span class="text-green-500">+18%</span>
+      </div>
+    </article>
+
+    <article class="service-card card-appear">
+      <div class="text-xs muted uppercase">Farmacias</div>
+      <h3 class="text-xl font-bold">Reducción del 26% en vencimientos</h3>
+      <p class="mt-2 muted">Control de lotes y alertas por rotación.</p>
+      <div class="mt-4 flex justify-between font-semibold">
+        <span>Inventario</span><span class="text-green-500">Mejora 4×</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="contacto" class="mt-10 bg-[#070707] p-8 rounded-xl shadow-sm">
+  <div class="grid md:grid-cols-2 gap-6 items-center">
+    <div>
+      <h2 class="text-2xl font-extrabold">Contacto directo</h2>
+      <p class="mt-3 muted">
+        Solicite una consulta express gratuita de 15 minutos para analizar su caso y detectar los puntos críticos.
       </p>
 
-      <div class="mt-6 text-right">
-        <a href="#contacto" class="px-5 py-2 rounded-md btn-red">Reservar diagnóstico</a>
+      <div class="mt-6 space-y-3">
+        <a href="mailto:contacto@elconsultor.com.ar" class="px-6 py-3 rounded-lg btn-red font-semibold inline-block">
+          Reserva inmediata por correo
+        </a>
+
+        <a href="https://wa.me/54911" class="px-6 py-3 rounded-lg btn-outline-white font-semibold inline-block">
+          Contactar por WhatsApp
+        </a>
       </div>
     </div>
   </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+</main>
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mobileMenu   = document.getElementById("mobileMenu");
-    const closeMenuBtn = document.getElementById("closeMobileMenu");
+<footer class="mt-12 py-8 text-center text-sm muted">
+  <div>&copy; <span id="year"></span> El Consultor.</div>
+</footer>
 
-    function openMenu(){
-      mobileMenu.classList.remove("hidden");
-      setTimeout(()=> mobileMenu.classList.add("open"), 10);
-      document.body.style.overflow = "hidden";
-      mobileToggle.setAttribute('aria-expanded','true');
+<!-- Pricing Modal -->
+<div id="pricingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
+  <div class="bg-[#0b0b0b] rounded-xl max-w-3xl w-full p-6 border border-white/6">
+    <div class="flex items-start justify-between">
+      <h3 class="text-xl font-bold">Servicios y precios</h3>
+      <button id="closePricing" class="text-white/70">✕</button>
+    </div>
+
+    <p class="mt-4 muted text-sm">Valores estimados. Las propuestas se ajustan según la complejidad del caso.</p>
+
+    <div class="mt-6 text-right">
+      <a href="#contacto" class="px-5 py-2 rounded-md btn-red">Consulta express gratuita</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const mobileToggle = document.getElementById("mobileToggle");
+const mobileMenu   = document.getElementById("mobileMenu");
+const closeMenuBtn = document.getElementById("closeMobileMenu");
+
+function openMenu(){
+  mobileMenu.classList.remove("hidden");
+  setTimeout(()=> mobileMenu.classList.add("open"), 10);
+  document.body.style.overflow="hidden";
+}
+function closeMenu(){
+  mobileMenu.classList.remove("open");
+  setTimeout(()=> mobileMenu.classList.add("hidden"), 200);
+  document.body.style.overflow="";
+}
+
+mobileToggle.onclick = openMenu;
+closeMenuBtn.onclick = closeMenu;
+mobileMenu.onclick = (e)=>{ if(e.target===mobileMenu) closeMenu(); };
+
+document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeMenu(); });
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("card-visible");
+      observer.unobserve(entry.target);
     }
-    function closeMenu(){
-      mobileMenu.classList.remove("open");
-      setTimeout(()=> mobileMenu.classList.add("hidden"), 200);
-      document.body.style.overflow = "";
-      mobileToggle.setAttribute('aria-expanded','false');
-    }
+  });
+},{ threshold:0.18 });
 
-    mobileToggle.addEventListener("click", openMenu);
-    closeMenuBtn.addEventListener("click", closeMenu);
-    mobileMenu.addEventListener("click", (e)=>{ if(e.target===mobileMenu) closeMenu(); });
+document.querySelectorAll(".card-appear").forEach(c=> observer.observe(c));
 
-    document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeMenu(); });
-
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add("card-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },{ threshold:0.18 });
-
-    document.querySelectorAll(".card-appear").forEach(c=>{
-      observer.observe(c);
-    });
-
-    const pricingModal = document.getElementById("pricingModal");
-    document.getElementById("viewPricing").onclick = ()=> pricingModal.classList.remove("hidden");
-    document.getElementById("closePricing").onclick = ()=> pricingModal.classList.add("hidden");
-    pricingModal.onclick = (e)=>{ if(e.target===pricingModal) pricingModal.classList.add("hidden") };
-
-    function handleSubmit(e){
-      e.preventDefault();
-      const data = new FormData(e.target);
-      const name = data.get("name");
-      const email = data.get("email");
-      const message = data.get("message");
-      window.location.href =
-        `mailto:contacto@elconsultor.com.ar?subject=Contacto%20de%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail:%20${email}`;
-    }
-  </script>
+const pricingModal = document.getElementById("pricingModal");
+document.getElementById("viewPricing").onclick = ()=> pricingModal.classList.remove("hidden");
+document.getElementById("closePricing").onclick = ()=> pricingModal.classList.add("hidden");
+pricingModal.onclick = (e)=>{ if(e.target===pricingModal) pricingModal.classList.add("hidden") };
+</script>
 
 </body>
 </html>
